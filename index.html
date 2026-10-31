@@ -28,7 +28,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebSite","@id":"https://studiosalbertodecampos.com.br/#site","url":"https://studiosalbertodecampos.com.br/","name":"Studios em Ipanema · MO.do Alberto de Campos","inLanguage":"pt-BR"},
-{"@type":"ApartmentComplex","@id":"https://studiosalbertodecampos.com.br/#empreendimento","name":"MO.do Ipanema","alternateName":["MO.do Alberto de Campos","Studios Alberto de Campos","Studios em Ipanema"],"description":"Lançamento da ARKT Inc na Rua Alberto de Campos, Ipanema: 17 unidades, sendo 13 studios de 34 a 40 m² e 4 doubles de 75 m², com lazer no rooftop.","url":"https://studiosalbertodecampos.com.br/","image":"https://studiosalbertodecampos.com.br/img/ipanema-por-do-sol.jpg","numberOfAccommodationUnits":17,"address":{"@type":"PostalAddress","streetAddress":"Rua Alberto de Campos","addressLocality":"Rio de Janeiro","addressRegion":"RJ","addressCountry":"BR"},"geo":{"@type":"GeoCoordinates","latitude":-22.98109,"longitude":-43.20372},"containedInPlace":{"@type":"Place","name":"Ipanema, Rio de Janeiro"}},
+{"@type":"ApartmentComplex","@id":"https://studiosalbertodecampos.com.br/#empreendimento","name":"MO.do Ipanema","alternateName":["MO.do Alberto de Campos","Studios Alberto de Campos","Studios em Ipanema"],"description":"Lançamento da ARKT Inc na Rua Alberto de Campos, Ipanema: 17 unidades, sendo 13 studios de 34 a 40 m² e 4 doubles de 75 m², com lazer no rooftop, academia e lavanderia.","url":"https://studiosalbertodecampos.com.br/","image":"https://studiosalbertodecampos.com.br/img/ipanema-por-do-sol.jpg","numberOfAccommodationUnits":17,"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Lazer no rooftop","value":true},{"@type":"LocationFeatureSpecification","name":"Academia","value":true},{"@type":"LocationFeatureSpecification","name":"Lavanderia","value":true}],"address":{"@type":"PostalAddress","streetAddress":"Rua Alberto de Campos","addressLocality":"Rio de Janeiro","addressRegion":"RJ","addressCountry":"BR"},"geo":{"@type":"GeoCoordinates","latitude":-22.98109,"longitude":-43.20372},"containedInPlace":{"@type":"Place","name":"Ipanema, Rio de Janeiro"}},
 {"@type":"RealEstateAgent","name":"Jannia Macedo","telephone":"+55-21-99918-1017","email":"jannia.macedovendasrj@gmail.com","areaServed":"Rio de Janeiro","url":"https://studiosalbertodecampos.com.br/"}
 ]}
 </script>
@@ -86,6 +86,16 @@ p{margin:0 0 1em}
 .btn-line:hover{background:var(--ink);color:var(--sand)}
 section{padding-block:clamp(84px,10vw,140px)}
 
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:clamp(36px,4vw,52px)}
+.btn-wa{background:#1F8F55;color:#fff}
+.btn-wa:hover{background:#17794A}
+.btn-light{background:var(--paper);color:var(--ink)}
+.btn-light:hover{background:var(--sand)}
+.cta-band{background:var(--clay);color:var(--paper);padding-block:clamp(48px,6vw,72px)}
+.cta-band .wrap{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+.cta-band h2{font-size:clamp(28px,3.2vw,40px);max-width:640px}
+.cta-band .cta-row{margin-top:0}
+
 /* NAV */
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s,color .3s;color:var(--paper);padding-top:env(safe-area-inset-top,0px)}
 .nav.solid{background:rgba(244,236,226,.97);backdrop-filter:blur(8px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
@@ -140,12 +150,20 @@ section{padding-block:clamp(84px,10vw,140px)}
 .map-frame{position:relative}
 .map img{width:100%;height:auto}
 @media (max-width:700px){.map img{aspect-ratio:1/1;object-fit:cover;object-position:54% 50%}.map-chip.lagoa{left:10%}.map-chip.praia{left:34%;bottom:9%}}
-.pin-tag{position:absolute;left:54.1%;top:44%;transform:translate(-50%,-125%);background:var(--ink);color:var(--paper);font:500 15px/1 var(--sans);padding:12px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.pin-tag{position:absolute;font-size:14px!important;left:54.1%;top:44%;transform:translate(-50%,-125%);background:var(--ink);color:var(--paper);font:500 15px/1 var(--sans);padding:12px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .pin-tag b{font-family:var(--serif);font-weight:400;font-size:18px;color:#F2CDB5;margin-right:6px}
 .map-chip{position:absolute;background:rgba(255,253,249,.94);color:var(--ink);font:500 14px/1 var(--sans);padding:10px 14px;border-radius:999px}
 .map-chip.lagoa{left:30%;top:16%}
 .map-chip.praia{left:43%;bottom:12%}
 .map figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:14px;font-size:14px;color:var(--stone)}
+.loc-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.near h3{margin-bottom:6px}
+.near-group{margin-top:22px}
+.near-group h4{margin:0 0 6px;font-size:14px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
+.near-group ul{list-style:none;margin:0;padding:0}
+.near-group li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:17px}
+.near-group li b{font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--stone)}
+@media (max-width:900px){.loc-body{grid-template-columns:1fr}}
 .loc-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(36px,4vw,56px);border-top:1px solid var(--ink)}
 .loc-list div{padding:24px 24px 0 0}
 .loc-list div + div{padding-left:24px;border-left:1px solid var(--line)}
@@ -212,14 +230,17 @@ section{padding-block:clamp(84px,10vw,140px)}
 /* ROOFTOP */
 .roofsec{background:var(--ink);color:var(--sand)}
 .roofsec h2{color:var(--paper)}
-.roof-grid{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:auto auto;gap:12px;margin-top:clamp(40px,5vw,64px)}
+.roof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:clamp(40px,5vw,64px)}
+.amen{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid rgba(244,236,226,.25)}
+.amen li{font-family:var(--serif);font-size:clamp(22px,2.2vw,28px);color:var(--paper);padding:12px 0;border-bottom:1px solid rgba(244,236,226,.25)}
 .roof-grid figure{margin:0;border-radius:4px;overflow:hidden;position:relative}
 .roof-grid img{width:100%;height:100%;object-fit:cover}
-.roof-grid .r1{grid-row:1/3}
+.roof-grid .r1{grid-column:1/-1;aspect-ratio:21/9}
+.roof-grid figure:not(.r1){aspect-ratio:4/3}
 .roof-head{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,80px);align-items:end}
 .roof-head .lede{color:#E9DDCF}
 .roofsec .small{color:#A89787;margin-top:14px}
-@media (max-width:820px){.roof-head,.roof-grid{grid-template-columns:1fr}.roof-grid .r1{grid-row:auto}}
+@media (max-width:820px){.roof-head{grid-template-columns:1fr}.roof-grid{grid-template-columns:1fr 1fr}.roof-grid .r1{aspect-ratio:16/10}}
 
 /* DIFERENCIAIS */
 .diff-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(40px,5vw,64px)}
@@ -303,7 +324,7 @@ footer a{color:#E5D8CA}
     <nav class="nav-links" aria-label="Seções">
       <a href="#localizacao">Localização</a>
       <a href="#studios">Studios</a>
-      <a href="#rooftop">Rooftop</a>
+      <a href="#rooftop">Lazer</a>
       <a href="#numeros">Ipanema em números</a>
       <a href="#contato" class="btn btn-clay">Receber informações</a>
     </nav>
@@ -318,7 +339,7 @@ footer a{color:#E5D8CA}
     <div class="hero-copy">
       <p class="label">MO.do Alberto de Campos · ARKT Inc</p>
       <h1>Studios em <em>Ipanema</em></h1>
-      <p class="lead">Entre a Lagoa e a praia, no melhor de Ipanema. 13 studios e 4 doubles na Rua Alberto de Campos.</p>
+      <p class="lead">Entre a Lagoa e a praia, no melhor de Ipanema. Apenas 17 unidades na Rua Alberto de Campos.</p>
       <div class="hero-actions">
         <a class="btn btn-clay" href="#contato">Receber informações</a>
         <a class="btn btn-ghost" href="#studios">Ver os studios</a>
@@ -359,19 +380,58 @@ footer a{color:#E5D8CA}
       </div>
       <p class="lede">Entre a Rua Joana Angélica e a Rua Vinicius de Moraes, com a Lagoa de um lado e a praia do outro.</p>
     </div>
-    <figure class="map">
-      <div class="map-frame">
-      <img src="img/mapa-ipanema.jpg" alt="Imagem de satélite do Google Maps de Ipanema, com a Lagoa Rodrigo de Freitas ao norte, a Praia de Ipanema ao sul e o ponto do MO.do na Rua Alberto de Campos" loading="lazy">
-      <span class="pin-tag"><b>MO.do</b>Rua Alberto de Campos</span>
-      <span class="map-chip lagoa">Lagoa Rodrigo de Freitas</span>
-      <span class="map-chip praia">Praia de Ipanema</span>
+    <div class="loc-body">
+      <figure class="map">
+        <div class="map-frame">
+        <img src="img/mapa-ipanema.jpg" alt="Imagem de satélite do Google Maps de Ipanema, com a Lagoa Rodrigo de Freitas ao norte, a Praia de Ipanema ao sul e o ponto do MO.do na Rua Alberto de Campos" loading="lazy">
+        <span class="pin-tag"><b>MO.do</b>Alberto de Campos</span>
+        <span class="map-chip lagoa">Lagoa Rodrigo de Freitas</span>
+        <span class="map-chip praia">Praia de Ipanema</span>
+        </div>
+        <figcaption><span>Imagem de satélite: Google Maps.</span><a href="https://www.google.com/maps/search/?api=1&query=-22.98109,-43.20372" target="_blank" rel="noopener">Abrir no Google Maps</a></figcaption>
+      </figure>
+      <div class="near">
+        <h3>O que tem por perto</h3>
+        <p class="small">Distâncias aproximadas, em linha reta, a partir da Rua Alberto de Campos. Fonte: Google Maps.</p>
+        <div class="near-group">
+          <h4>Transporte e lazer</h4>
+          <ul>
+            <li><span>Praça Nossa Senhora da Paz</span><b>350 m</b></li>
+            <li><span>Metrô Nossa Senhora da Paz</span><b>370 m</b></li>
+          </ul>
+        </div>
+        <div class="near-group">
+          <h4>Mercados</h4>
+          <ul>
+            <li><span>Zona Sul · Barão da Torre</span><b>270 m</b></li>
+            <li><span>SuperPrix · Visconde de Pirajá</span><b>360 m</b></li>
+          </ul>
+        </div>
+        <div class="near-group">
+          <h4>Restaurantes e cafés</h4>
+          <ul>
+            <li><span>Pura Brasa</span><b>240 m</b></li>
+            <li><span>Glória Bistrô</span><b>250 m</b></li>
+            <li><span>Pici Trattoria</span><b>260 m</b></li>
+            <li><span>Nusa Café</span><b>270 m</b></li>
+            <li><span>Nema Padaria</span><b>330 m</b></li>
+            <li><span>Padelli</span><b>430 m</b></li>
+          </ul>
+        </div>
+        <div class="near-group">
+          <h4>Farmácias e academias</h4>
+          <ul>
+            <li><span>Drogaria Venancio</span><b>360 m</b></li>
+            <li><span>Drogarias Pacheco</span><b>380 m</b></li>
+            <li><span>Academia Ipanema · Joana Angélica</span><b>320 m</b></li>
+            <li><span>Bodytech · Barão da Torre</span><b>780 m</b></li>
+          </ul>
+        </div>
       </div>
-      <figcaption><span>Imagem de satélite: Google Maps.</span><a href="https://www.google.com/maps/search/?api=1&query=-22.98109,-43.20372" target="_blank" rel="noopener">Abrir no Google Maps</a></figcaption>
-    </figure>
-    <div class="loc-list">
-      <div><b>Metrô</b><span>Estação Nossa Senhora da Paz, a poucos minutos a pé</span></div>
-      <div><b>Lagoa</b><span>Rodrigo de Freitas</span></div>
-      <div><b>Praia</b><span>Praia de Ipanema</span></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-clay" href="#contato">Quero conhecer o MO.do</a>
+      <a class="btn btn-line" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Falar no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -395,7 +455,7 @@ footer a{color:#E5D8CA}
       <button class="g-e" data-i="6" aria-label="Ampliar foto 7"><img src="img/studio-3.jpg" alt="Sala de estar integrada com cozinha" loading="lazy"></button>
     </div>
     <div class="gal-foot">
-      <p class="small" style="margin:0">Imagens meramente ilustrativas, de projetos MO.do da mesma incorporadora. Clique para ampliar.</p>
+      <p class="small" style="margin:0">Imagens ilustrativas de projetos da linha MO.do. Clique para ampliar.</p>
     </div>
 
     <div class="types" role="list" aria-label="Tipologias e metragens">
@@ -415,6 +475,10 @@ footer a{color:#E5D8CA}
         <li>Banheiro</li>
         <li>Varanda com vista</li>
       </ul>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-clay" href="#contato">Receber informações dos studios</a>
+      <a class="btn btn-line" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Falar no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -451,17 +515,26 @@ footer a{color:#E5D8CA}
   <div class="wrap">
     <div class="roof-head">
       <div>
-        <p class="label" style="color:#E3A27C">Lazer no rooftop</p>
+        <p class="label" style="color:#E3A27C">Lazer e serviços</p>
         <h2>Para viver e receber com estilo.</h2>
       </div>
-      <p class="lede">O lazer fica no rooftop, no último andar, acima das 17 unidades.</p>
+      <ul class="amen">
+        <li>Lazer no rooftop</li>
+        <li>Academia</li>
+        <li>Lavanderia</li>
+      </ul>
     </div>
     <div class="roof-grid">
       <figure class="r1"><img src="img/rooftop-piscina.jpg" alt="Rooftop com espreguiçadeiras e jardim vertical" loading="lazy"></figure>
       <figure><img src="img/rooftop-lounge.jpg" alt="Lounge no rooftop com poltronas" loading="lazy"></figure>
+      <figure><img src="img/academia.jpg" alt="Academia com esteira e pesos" loading="lazy"></figure>
       <figure><img src="img/rooftop-bar.jpg" alt="Bar e mesas no rooftop" loading="lazy"></figure>
     </div>
-    <p class="small">Imagens meramente ilustrativas do padrão de rooftop MO.do, de outro projeto da mesma incorporadora. Os itens de lazer do MO.do Ipanema seguem o memorial descritivo do lançamento.</p>
+    <p class="small">Imagens ilustrativas de projetos da linha MO.do.</p>
+    <div class="cta-row">
+      <a class="btn btn-light" href="#contato">Quero saber mais</a>
+      <a class="btn btn-wa" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -474,6 +547,16 @@ footer a{color:#E5D8CA}
       <article><h3>Lazer no rooftop</h3><p>Para viver e receber com estilo.</p></article>
       <article><h3>Vocação para short stay</h3><p>Ideal para moradia ou investimento.</p></article>
       <article><h3>Arte e sofisticação</h3><p>Arquitetura e design autoral, com curadoria em cada detalhe.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="Contato rápido">
+  <div class="wrap">
+    <h2>Apenas 17 unidades entre a Lagoa e a praia de Ipanema.</h2>
+    <div class="cta-row">
+      <a class="btn btn-light" href="#contato">Receber informações</a>
+      <a class="btn btn-ghost" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Falar no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -528,6 +611,10 @@ footer a{color:#E5D8CA}
     </div>
 
     <p class="note">Os números de ocupação se referem à rede hoteleira da região Ipanema/Leblon e não representam garantia de ocupação ou de rentabilidade das unidades do MO.do. Fontes: <a href="https://www.panrotas.com.br/mercado/destinos/2026/02/rio-de-janeiro-ja-supera-91-de-ocupacao-hoteleira-para-o-carnaval-2026_225772.html" target="_blank" rel="noopener">Panrotas</a>, <a href="https://agenciabrasil.ebc.com.br/geral/noticia/2026-01/reveillon-no-rio-tem-ocupacao-hoteleira-media-superior-90" target="_blank" rel="noopener">Agência Brasil</a>, <a href="https://diariodorio.com/rio-tem-em-2025-melhor-media-de-ocupacao-hoteleira-dos-ultimos-anos-referente-ao-1o-trimestre" target="_blank" rel="noopener">Diário do Rio (ocupação)</a>, <a href="https://diariodorio.com/turismo-internacional-cresce-437-no-rj-e-estado-supera-21-milhoes-de-visitantes-em-2025/" target="_blank" rel="noopener">Diário do Rio (turistas)</a> e <a href="https://www.panrotas.com.br/mercado/destinos/2025/12/rio-atinge-patamar-historico-de-2-milhoes-de-turistas-internacionais-em-2025_224349.html" target="_blank" rel="noopener">Panrotas (origem)</a>.</p>
+    <div class="cta-row">
+      <a class="btn btn-clay" href="#contato">Quero investir em Ipanema</a>
+      <a class="btn btn-line" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -596,7 +683,7 @@ footer a{color:#E5D8CA}
       <span class="brand">MO<b>.do</b></span>
       <span>Rua Alberto de Campos, Ipanema · Rio de Janeiro · ARKT Inc<br>Atendimento: Jannia Macedo · WhatsApp (21) 99918-1017</span>
     </div>
-    <p>Imagens meramente ilustrativas. As perspectivas dos studios e do rooftop são de projetos MO.do da mesma incorporadora e servem como referência de padrão. Metragens conforme material de divulgação do lançamento. Imagem de satélite: Google Maps. Fotos de Ipanema e da Lagoa: Unsplash. Os dados de turismo e ocupação são de fontes públicas citadas na seção Ipanema em números e não constituem promessa de rentabilidade. Este site não é uma oferta; informações sujeitas a alteração sem aviso prévio.</p>
+    <p>Imagens meramente ilustrativas. As perspectivas dos studios e das áreas comuns são de projetos da linha MO.do e servem como referência de padrão. Metragens conforme material de divulgação do lançamento. Imagem de satélite: Google Maps. Fotos de Ipanema e da Lagoa: Unsplash. Os dados de turismo e ocupação são de fontes públicas citadas na seção Ipanema em números e não constituem promessa de rentabilidade. Este site não é uma oferta; informações sujeitas a alteração sem aviso prévio.</p>
   </div>
 </footer>
 
@@ -620,7 +707,7 @@ lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
 addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')openLb(cur-1);if(e.key==='ArrowRight')openLb(cur+1)});
 
 /* eventos */
-document.querySelectorAll('a[href^="https://wa.me"]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','whatsapp_click',{link_location:a.classList.contains('wa')?'botao_flutuante':'contato'})}));
+document.querySelectorAll('a[href^="https://wa.me"]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','whatsapp_click',{link_location:a.classList.contains('wa')?'botao_flutuante':(a.closest('section')?.id||'pagina')})}));
 document.querySelectorAll('a[href="#contato"]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','cta_click',{cta:a.textContent.trim()})}));
 
 /* formulário */
