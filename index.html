@@ -86,14 +86,17 @@ p{margin:0 0 1em}
 .btn-line:hover{background:var(--ink);color:var(--sand)}
 section{padding-block:clamp(84px,10vw,140px)}
 
-.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:clamp(36px,4vw,52px)}
+.cta-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:clamp(36px,4vw,52px)}
+.cta-row .btn{width:100%;padding:20px 24px;text-align:center;line-height:1.3}
+@media (max-width:700px){.cta-row{grid-template-columns:1fr}}
 .btn-wa{background:#1F8F55;color:#fff}
 .btn-wa:hover{background:#17794A}
 .btn-light{background:var(--paper);color:var(--ink)}
 .btn-light:hover{background:var(--sand)}
 .cta-band{background:var(--clay);color:var(--paper);padding-block:clamp(48px,6vw,72px)}
-.cta-band .wrap{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
 .cta-band h2{font-size:clamp(28px,3.2vw,40px);max-width:640px}
+.cta-band .wrap{display:grid;grid-template-columns:1fr;gap:28px}
+.cta-band h2{max-width:none}
 .cta-band .cta-row{margin-top:0}
 
 /* NAV */
@@ -158,6 +161,7 @@ section{padding-block:clamp(84px,10vw,140px)}
 .map figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:14px;font-size:14px;color:var(--stone)}
 .loc-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
 .near h3{margin-bottom:6px}
+.loc-left .near-group:first-child{margin-top:10px}
 .near-group{margin-top:22px}
 .near-group h4{margin:0 0 6px;font-size:14px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
 .near-group ul{list-style:none;margin:0;padding:0}
@@ -341,7 +345,7 @@ footer a{color:#E5D8CA}
       <h1>Studios em <em>Ipanema</em></h1>
       <p class="lead">Entre a Lagoa e a praia, no melhor de Ipanema. Apenas 17 unidades na Rua Alberto de Campos.</p>
       <div class="hero-actions">
-        <a class="btn btn-clay" href="#contato">Receber informações</a>
+        <a class="btn btn-clay" href="#contato">Receber a apresentação</a>
         <a class="btn btn-ghost" href="#studios">Ver os studios</a>
       </div>
     </div>
@@ -381,6 +385,7 @@ footer a{color:#E5D8CA}
       <p class="lede">Entre a Rua Joana Angélica e a Rua Vinicius de Moraes, com a Lagoa de um lado e a praia do outro.</p>
     </div>
     <div class="loc-body">
+      <div class="loc-left">
       <figure class="map">
         <div class="map-frame">
         <img src="img/mapa-ipanema.jpg" alt="Imagem de satélite do Google Maps de Ipanema, com a Lagoa Rodrigo de Freitas ao norte, a Praia de Ipanema ao sul e o ponto do MO.do na Rua Alberto de Campos" loading="lazy">
@@ -390,9 +395,7 @@ footer a{color:#E5D8CA}
         </div>
         <figcaption><span>Imagem de satélite: Google Maps.</span><a href="https://www.google.com/maps/search/?api=1&query=-22.98109,-43.20372" target="_blank" rel="noopener">Abrir no Google Maps</a></figcaption>
       </figure>
-      <div class="near">
-        <h3>O que tem por perto</h3>
-        <p class="small">Distâncias aproximadas, em linha reta, a partir da Rua Alberto de Campos. Fonte: Google Maps.</p>
+        <div class="near">
         <div class="near-group">
           <h4>Transporte e lazer</h4>
           <ul>
@@ -407,6 +410,11 @@ footer a{color:#E5D8CA}
             <li><span>SuperPrix · Visconde de Pirajá</span><b>360 m</b></li>
           </ul>
         </div>
+        </div>
+      </div>
+      <div class="near">
+        <h3>O que tem por perto</h3>
+        <p class="small">Distâncias aproximadas, em linha reta, a partir da Rua Alberto de Campos. Fonte: Google Maps.</p>
         <div class="near-group">
           <h4>Restaurantes e cafés</h4>
           <ul>
@@ -430,8 +438,8 @@ footer a{color:#E5D8CA}
       </div>
     </div>
     <div class="cta-row">
-      <a class="btn btn-clay" href="#contato">Quero conhecer o MO.do</a>
-      <a class="btn btn-line" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn btn-clay" href="#contato">Receber a apresentação do MO.do Ipanema</a>
+      <a class="btn btn-line" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Tirar dúvidas com a Jannia no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -477,8 +485,8 @@ footer a{color:#E5D8CA}
       </ul>
     </div>
     <div class="cta-row">
-      <a class="btn btn-clay" href="#contato">Receber informações dos studios</a>
-      <a class="btn btn-line" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn btn-clay" href="#contato">Quero as plantas dos studios</a>
+      <a class="btn btn-line" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Perguntar sobre valores no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -532,8 +540,8 @@ footer a{color:#E5D8CA}
     </div>
     <p class="small">Imagens ilustrativas de projetos da linha MO.do.</p>
     <div class="cta-row">
-      <a class="btn btn-light" href="#contato">Quero saber mais</a>
-      <a class="btn btn-wa" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn btn-light" href="#contato">Receber o projeto completo</a>
+      <a class="btn btn-wa" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Falar com a Jannia no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -555,8 +563,8 @@ footer a{color:#E5D8CA}
   <div class="wrap">
     <h2>Apenas 17 unidades entre a Lagoa e a praia de Ipanema.</h2>
     <div class="cta-row">
-      <a class="btn btn-light" href="#contato">Receber informações</a>
-      <a class="btn btn-ghost" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn btn-light" href="#contato">Receber as condições de lançamento</a>
+      <a class="btn btn-ghost" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Chamar a Jannia no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -612,8 +620,8 @@ footer a{color:#E5D8CA}
 
     <p class="note">Os números de ocupação se referem à rede hoteleira da região Ipanema/Leblon e não representam garantia de ocupação ou de rentabilidade das unidades do MO.do. Fontes: <a href="https://www.panrotas.com.br/mercado/destinos/2026/02/rio-de-janeiro-ja-supera-91-de-ocupacao-hoteleira-para-o-carnaval-2026_225772.html" target="_blank" rel="noopener">Panrotas</a>, <a href="https://agenciabrasil.ebc.com.br/geral/noticia/2026-01/reveillon-no-rio-tem-ocupacao-hoteleira-media-superior-90" target="_blank" rel="noopener">Agência Brasil</a>, <a href="https://diariodorio.com/rio-tem-em-2025-melhor-media-de-ocupacao-hoteleira-dos-ultimos-anos-referente-ao-1o-trimestre" target="_blank" rel="noopener">Diário do Rio (ocupação)</a>, <a href="https://diariodorio.com/turismo-internacional-cresce-437-no-rj-e-estado-supera-21-milhoes-de-visitantes-em-2025/" target="_blank" rel="noopener">Diário do Rio (turistas)</a> e <a href="https://www.panrotas.com.br/mercado/destinos/2025/12/rio-atinge-patamar-historico-de-2-milhoes-de-turistas-internacionais-em-2025_224349.html" target="_blank" rel="noopener">Panrotas (origem)</a>.</p>
     <div class="cta-row">
-      <a class="btn btn-clay" href="#contato">Quero investir em Ipanema</a>
-      <a class="btn btn-line" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn btn-clay" href="#contato">Quero investir em um studio em Ipanema</a>
+      <a class="btn btn-line" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20studios%20do%20MO.do%20Ipanema%2C%20na%20Rua%20Alberto%20de%20Campos." target="_blank" rel="noopener">Conversar sobre investimento no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -655,7 +663,7 @@ footer a{color:#E5D8CA}
       </div>
       <input type="text" name="_honey" id="honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-msg" id="msg" role="status" aria-live="polite"></div>
-      <button class="btn btn-clay" type="submit" id="send">Receber informações</button>
+      <button class="btn btn-clay" type="submit" id="send">Quero receber a apresentação</button>
       <p class="small">Ao enviar, você concorda em ser contatado sobre este empreendimento. Seus dados não serão compartilhados.</p>
     </form>
     <div class="agent">
@@ -729,8 +737,8 @@ form.addEventListener('submit',async e=>{
     if(!r.ok)throw 0;
     if(window.gtag)gtag('event','generate_lead',{form:'contato',objetivo:form.objetivo.value});
     form.reset();show('Recebemos seus dados. Um especialista vai entrar em contato pelo WhatsApp.',true);
-    send.textContent='Informações solicitadas';
-  }catch(_){show('Não foi possível enviar agora. Verifique sua conexão e tente de novo, ou chame no WhatsApp.');send.disabled=false;send.textContent='Receber informações'}
+    send.textContent='Apresentação solicitada';
+  }catch(_){show('Não foi possível enviar agora. Verifique sua conexão e tente de novo, ou chame no WhatsApp.');send.disabled=false;send.textContent='Quero receber a apresentação'}
 });
 </script>
 </body>
