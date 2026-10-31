@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://studiosalbertodecampos.com.br/sitemap.xml
