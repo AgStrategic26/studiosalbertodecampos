@@ -287,6 +287,22 @@ section{padding-block:clamp(84px,10vw,140px)}
 .note{margin-top:48px;font-size:14px;color:var(--stone);max-width:900px;line-height:1.6}
 @media (max-width:900px){.occ,.origins,.big-stat{grid-template-columns:1fr}}
 
+
+/* RENTABILIDADE */
+.rent{background:var(--sand);border-top:1px solid var(--line)}
+.rent .intro{max-width:760px;margin-top:22px}
+.rent-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px);margin:clamp(44px,6vw,72px) 0 clamp(36px,5vw,56px)}
+.rent-grid div{border-top:2px solid var(--clay);padding-top:18px}
+.rent-grid b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,52px);line-height:1;color:var(--clay);letter-spacing:-.02em}
+.rent-grid span{display:block;margin-top:10px;font-size:16px;line-height:1.45}
+.cen{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper)}
+.cen div{padding:22px 24px}
+.cen div+div{border-left:1px solid var(--line)}
+.cen p{margin:0;font-size:15px;color:var(--stone)}
+.cen b{display:block;font-family:var(--serif);font-weight:400;font-size:30px;margin:6px 0 2px}
+.cen .on{background:#F6E4D8}
+@media (max-width:900px){.rent-grid{grid-template-columns:1fr 1fr}.cen{grid-template-columns:1fr}.cen div+div{border-left:0;border-top:1px solid var(--line)}}
+
 /* STRIP */
 .strip{display:grid;grid-template-columns:1fr 1fr 1fr;padding:0}
 .strip img{width:100%;height:clamp(240px,32vw,500px);object-fit:cover}
@@ -337,6 +353,7 @@ footer a{color:#E5D8CA}
       <a href="#studios">Studios</a>
       <a href="#rooftop">Lazer</a>
       <a href="#numeros">Ipanema em números</a>
+      <a href="#rentabilidade">Rentabilidade</a>
       <a href="#contato" class="btn btn-clay">Receber informações</a>
     </nav>
   </div>
@@ -633,6 +650,33 @@ footer a{color:#E5D8CA}
   </div>
 </section>
 
+<section class="rent" id="rentabilidade">
+  <div class="wrap">
+    <p class="label">Estudo de rentabilidade</p>
+    <h2 style="max-width:860px">Quanto pode render um studio no MO.do Ipanema.</h2>
+    <p class="intro muted">Estudo independente de locação por temporada feito com diárias reais de apartamentos em Ipanema no Airbnb, data a data, do bruto ao líquido. Números do cenário Base, com gestora profissional (12%), para a unidade entregue e mobiliada, antes do Imposto de Renda.</p>
+
+    <div class="rent-grid">
+      <div><b>R$ 6.956</b><span>líquido por mês, depois de canais, gestão, limpeza, condomínio, IPTU e contas</span></div>
+      <div><b>68,6%</b><span>ocupação média no ano, com Réveillon, Carnaval e eventos</span></div>
+      <div><b>R$ 649</b><span>diária média no ano</span></div>
+      <div><b>1,8x</b><span>o que o mesmo studio renderia no aluguel tradicional</span></div>
+    </div>
+
+    <div class="cen" aria-label="Resultado líquido por mês nos três cenários">
+      <div><p>Conservador</p><b>R$ 4.819</b><p>por mês · 60,6% de ocupação</p></div>
+      <div class="on"><p>Base</p><b>R$ 6.956</b><p>por mês · 68,6% de ocupação</p></div>
+      <div><p>Otimista</p><b>R$ 9.164</b><p>por mês · 75% de ocupação</p></div>
+    </div>
+
+    <p class="note">Projeção de estudo independente (outubro de 2026), não é garantia de rentabilidade. O MO.do está em pré-lançamento: preço, condições, condomínio, IPTU e data de entrega ainda não foram divulgados pela ARKT, e o estudo usa estimativas de mercado para esses valores. O estudo completo mostra as diárias por data, o calendário de eventos, os três cenários com e sem gestora e o retorno para cada preço de compra.</p>
+    <div class="cta-row">
+      <a class="btn btn-clay" id="ver-estudo" href="https://estudo-modo-ipanema.vercel.app" target="_blank" rel="noopener">Ver o estudo de rentabilidade completo</a>
+      <a class="btn btn-line" href="https://wa.me/5521999181017?text=Ol%C3%A1!%20Vi%20o%20estudo%20de%20rentabilidade%20do%20MO.do%20Ipanema%20e%20quero%20saber%20mais." target="_blank" rel="noopener">Tirar dúvidas sobre o estudo</a>
+    </div>
+  </div>
+</section>
+
 <section class="strip" aria-label="Ipanema">
   <img width="1600" height="1120" src="img/ipanema-aerea-1600.webp" srcset="img/ipanema-aerea-800.webp 800w, img/ipanema-aerea-1600.webp 1600w" sizes="(max-width: 700px) 100vw, 34vw" alt="Vista do mar para a orla de Ipanema" loading="lazy" decoding="async">
   <img width="1600" height="1065" src="img/ipanema-orla-1600.webp" srcset="img/ipanema-orla-800.webp 800w, img/ipanema-orla-1600.webp 1600w" sizes="(max-width: 700px) 100vw, 34vw" alt="Ciclovia e quiosques na orla de Ipanema com o Dois Irmãos ao fundo" loading="lazy" decoding="async">
@@ -723,6 +767,7 @@ addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')closeLb()
 
 /* eventos */
 document.querySelectorAll('a[href^="https://wa.me"]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','whatsapp_click',{link_location:a.classList.contains('wa')?'botao_flutuante':(a.closest('section')?.id||'pagina')})}));
+document.getElementById('ver-estudo')?.addEventListener('click',()=>{if(window.gtag)gtag('event','estudo_click',{estudo:'rentabilidade'})});
 document.querySelectorAll('a[href="#contato"]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','cta_click',{cta:a.textContent.trim()})}));
 
 /* formulário */
