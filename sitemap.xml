@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://studiosalbertodecampos.com.br/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://studiosalbertodecampos.com.br/img/ipanema-por-do-sol.jpg</image:loc></image:image>
@@ -11,8 +11,40 @@
     <image:image><image:loc>https://studiosalbertodecampos.com.br/img/mapa-ipanema.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://studiosalbertodecampos.com.br/modo-ipanema/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://studiosalbertodecampos.com.br/img/lagoa-por-do-sol.jpg</image:loc></image:image>
+    <image:image><image:loc>https://studiosalbertodecampos.com.br/img/rooftop-piscina.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://studiosalbertodecampos.com.br/rua-alberto-de-campos-176/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://studiosalbertodecampos.com.br/img/ipanema-aerea.jpg</image:loc></image:image>
+    <image:image><image:loc>https://studiosalbertodecampos.com.br/img/mapa-ipanema.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://studiosalbertodecampos.com.br/plantas-e-precos/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://studiosalbertodecampos.com.br/img/studio-2.jpg</image:loc></image:image>
+    <image:image><image:loc>https://studiosalbertodecampos.com.br/img/studio-5.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://studiosalbertodecampos.com.br/studios-em-ipanema/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://studiosalbertodecampos.com.br/img/ipanema-orla.jpg</image:loc></image:image>
+    <image:image><image:loc>https://studiosalbertodecampos.com.br/img/studio-4.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://studiosalbertodecampos.com.br/estudo-de-rentabilidade/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
