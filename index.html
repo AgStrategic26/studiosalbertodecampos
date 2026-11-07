@@ -375,6 +375,7 @@ footer a{color:#E5D8CA}
       <h1><span class="h1-kicker">MO.do Ipanema · Rua Alberto de Campos, 176</span> Studios em <em>Ipanema</em></h1>
       <p class="label" style="margin-top:-8px">Lançamento ARKT Inc · também chamado de Modo Ipanema</p>
       <p class="lead">Entre a Lagoa e a praia, no melhor de Ipanema. Apenas 17 unidades na Rua Alberto de Campos, 176.</p>
+      <p class="hero-renda" style="margin-top:-6px;font-size:16px;line-height:1.5;color:rgba(255,255,255,.92)">Estudo independente com diárias reais do Airbnb: cenário base de <b>R$ 6.956 líquidos por mês</b>. <a href="/estudo-de-rentabilidade/" style="color:inherit">Ver o estudo</a></p>
       <div class="hero-actions">
         <a class="btn btn-clay" href="#contato">Receber a apresentação</a>
         <a class="btn btn-ghost" href="#studios">Ver os studios</a>
@@ -757,8 +758,8 @@ footer a{color:#E5D8CA}
           <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" required>
         </div>
         <div>
-          <label for="email">E-mail</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
+          <label for="email">E-mail (opcional)</label>
+          <input id="email" name="email" type="email" autocomplete="email">
         </div>
       </div>
       <div>
@@ -839,11 +840,11 @@ form.addEventListener('submit',async e=>{
   const nome=form.nome.value.trim(),email=form.email.value.trim(),fone=form.whatsapp.value.replace(/\D/g,'');
   if(nome.length<2){show('Preencha seu nome.');form.nome.focus();return}
   if(fone.length<10){show('Informe um WhatsApp com DDD.');form.whatsapp.focus();return}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){show('Informe um e-mail válido.');form.email.focus();return}
+  if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){show('Informe um e-mail válido.');form.email.focus();return}
   send.disabled=true;send.textContent='Enviando...';
   try{
     const r=await fetch('https://formsubmit.co/ajax/'+LEAD_EMAIL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
-      body:JSON.stringify({Nome:nome,WhatsApp:form.whatsapp.value,'E-mail':email,Objetivo:form.objetivo.value,Origem:'Landing MO.do Ipanema (studiosalbertodecampos.com.br)',_subject:'Novo lead: Studios em Ipanema (MO.do Alberto de Campos)',_template:'table',_captcha:'false',_honey:document.getElementById('honey').value})});
+      body:JSON.stringify({Nome:nome,WhatsApp:form.whatsapp.value,'E-mail':email||'(não informado)',Objetivo:form.objetivo.value,Origem:'Landing MO.do Ipanema (studiosalbertodecampos.com.br)',_subject:'Novo lead: Studios em Ipanema (MO.do Alberto de Campos)',_template:'table',_captcha:'false',_honey:document.getElementById('honey').value})});
     if(!r.ok)throw 0;
     if(window.gtag)gtag('event','generate_lead',{form:'contato',objetivo:form.objetivo.value});
     form.reset();show('Recebemos seus dados. Um especialista vai entrar em contato pelo WhatsApp.',true);
