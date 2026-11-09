@@ -20,14 +20,25 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://studiosalbertodecampos.com.br/estudo-de-rentabilidade/#pagina", "url": "https://studiosalbertodecampos.com.br/estudo-de-rentabilidade/", "name": "Rentabilidade MO.do Ipanema | Studios na Alberto de Campos, 176", "description": "Estudo de rentabilidade dos studios do MO.do Ipanema (MOdO), na Rua Alberto de Campos, 176: diárias reais do Airbnb em Ipanema, ocupação, três cenários de resultado e retorno por preço de compra.", "inLanguage": "pt-BR", "isPartOf": {"@id": "https://studiosalbertodecampos.com.br/#site"}, "about": {"@id": "https://studiosalbertodecampos.com.br/#empreendimento"}, "breadcrumb": {"@id": "https://studiosalbertodecampos.com.br/estudo-de-rentabilidade/#trilha"}}, {"@type": "BreadcrumbList", "@id": "https://studiosalbertodecampos.com.br/estudo-de-rentabilidade/#trilha", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "MO.do Ipanema", "item": "https://studiosalbertodecampos.com.br/"}, {"@type": "ListItem", "position": 2, "name": "Estudo de rentabilidade", "item": "https://studiosalbertodecampos.com.br/estudo-de-rentabilidade/"}]}]}
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YE3QMMRCWR"></script>
+<!-- Google tag (gtag.js): só carrega depois que o visitante aceita os cookies -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-YE3QMMRCWR');
+  function carregaGA(){if(window.__gaOk)return;window.__gaOk=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-YE3QMMRCWR';document.head.appendChild(s);}
+  try{if(localStorage.getItem('modo-cookies')==='sim')carregaGA();}catch(e){}
 </script>
+<style>
+.cookies{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:80;max-width:560px;margin:0 auto;background:var(--paper,#FFFDF9);color:var(--ink,#2A201B);border:1px solid var(--line,#DCCDBB);border-radius:12px;box-shadow:0 10px 30px rgba(42,32,27,.14);padding:16px 18px;text-align:center;font-size:.92rem;line-height:1.5}
+.cookies[hidden]{display:none}
+.cookies p{margin:0 0 12px}
+.cookies div{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.cookies button{font:inherit;font-size:.82rem;letter-spacing:.06em;padding:10px 22px;border-radius:999px;border:1px solid var(--ink,#2A201B);cursor:pointer}
+.cookies .ck-sim{background:var(--ink,#2A201B);color:var(--paper,#FFFDF9)}
+.cookies .ck-nao{background:transparent;color:var(--ink,#2A201B)}
+@media(max-width:720px){.cookies{bottom:calc(88px + env(safe-area-inset-bottom,0px));left:10px;right:10px;padding:12px 14px}}
+</style>
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -909,6 +920,17 @@ let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if((in
 </script>
 <script>
 document.querySelectorAll('a[href^="https://wa.me"]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','whatsapp_click',{link_location:'estudo'})}));
+</script>
+<div class="cookies" id="cookies" hidden role="dialog" aria-label="Aviso de cookies">
+  <p><b>Usamos cookies</b> para medir as visitas a este site. Você pode aceitar ou recusar.</p>
+  <div><button class="ck-sim" type="button" id="aceitaCookies">Aceitar</button><button class="ck-nao" type="button" id="recusaCookies">Recusar</button></div>
+</div>
+<script>
+(function(){var v=null;try{v=localStorage.getItem('modo-cookies');}catch(e){}
+  if(v)return;var c=document.getElementById('cookies');c.hidden=false;
+  function salva(x){try{localStorage.setItem('modo-cookies',x);}catch(e){}c.hidden=true;}
+  document.getElementById('aceitaCookies').onclick=function(){salva('sim');carregaGA();};
+  document.getElementById('recusaCookies').onclick=function(){salva('nao');};})();
 </script>
 </body>
 </html>
